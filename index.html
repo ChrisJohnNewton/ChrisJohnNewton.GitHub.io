@@ -72,7 +72,7 @@
       <h2 class="l1">Tools</h2>
       <ul class="l1">
         <li class="backing-box"><a class="l2" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('calculators').getBoundingClientRect().top,behavior:'smooth'})">WEIGHT LOSS CALCULATORS</a></li>
-        <li class="backing-box"><a class="l2" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('text-manipulator').getBoundingClientRect().top,behavior:'smooth'})">TEXT MANIPULATOR</a></li>
+        <li class="backing-box"><a class="l2" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('text-manipulation').getBoundingClientRect().top,behavior:'smooth'})">TEXT MANIPULATION</a></li>
         <li class="backing-box"><a class="l2" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('prepare-web-images').getBoundingClientRect().top,behavior:'smooth'})">PREPARE WEB IMAGES</a></li>
       </ul>
     </nav>
@@ -84,8 +84,8 @@
         </svg>
       </a>
       <h2 class="l1">Weight Loss Calculators</h2>
-      <form id="calculator" onsubmit="return calculateWeight()">
-        <select id="calculator-select" name="calculator-choice" onchange="prepareCalculator()">
+      <form id="calculator" class="l1" onsubmit="return calculateWeight()">
+        <select id="calculator-select" class="l1" name="calculator-choice" onchange="prepareCalculator()">
           <option value="BMI Calculator" selected>Body Mass Index Calculator</option>
           <option value="BAI Calculator">Body Adiposity Index Calculator</option>
         </select>
@@ -101,19 +101,19 @@
           </div>
           <label>
               <span id="calculator-1-text-a">Weight:</span>
-              <input id="calculator-1-input" max="999" min="0" value="160" size="15" type="number">
+              <input id="calculator-1-input" class="l2 l3" max="999" min="0" value="160" size="15" type="number">
               &nbsp;<span id="calculator-1-text-b">lbs</span>
           </label>
           <label>
             Height:
-            <input id="calculator-2-input-a" max="10" min="1" value="5" size="15" type="number">
+            <input id="calculator-2-input-a" class="l2 l3" max="10" min="1" value="5" size="15" type="number">
             &nbsp;<span id="calculator-2-text-a">ft</span>
-            <input id="calculator-2-input-b" max="12" min="0" value="5" size="15" type="number">
+            <input id="calculator-2-input-b" class="l2 l3" max="12" min="0" value="5" size="15" type="number">
             &nbsp;<span id="calculator-2-text-b">in</span>
           </label>
           <label id="calculator-3-label" style="display:none">
             Age:
-            <input id="calculator-3-input" max="79" min="20" value="40" size="15" type="number">
+            <input id="calculator-3-input" class="l2 l3" max="79" min="20" value="40" size="15" type="number">
             &nbsp;<span id="calculator-3-text">years old</span>
           </label>
           <div id="calculator-4-radio" class="l2" style="display:none">
@@ -131,8 +131,48 @@
       </form>
       <script src="/weight-loss-calculators/weight-loss-calculators.min.js"></script>
     </article>
-    <article id="text-manipulator" class="stripe pad">
-      <h2 class="l1">Text Manipulator</h2>
+    <article id="text-manipulation" class="stripe pad">
+      <h2 class="l1">Text Manipulation</h2>
+      <form id="manipulation" class="l1" onsubmit="return false">
+        <label style="width:310px">
+          Select which text manipulation you'd like to use, and then input your text below.
+          <select id="manipulation-select" class="l1" style="margin-top:20px" name="manipulation-choice">
+            <option value="Search & Replace" selected>Search & Replace</option>
+            <option value="To Lowercase">To Lowercase</option>
+            <option value="To Uppercase">To Uppercase</option>
+            <option value="To Upper First Case">To Upper First Case</option>
+            <option value="To Title Case">To Title Case</option>
+          </select>
+        </label>
+        <label id="search-term-label" class="l2">
+          Search Term: 
+          <input id="search-term-input" class="l3" size="15" type="text" onchange="manipulateText()">
+        </label>
+        <label id="replace-term-label" class="l2">
+          Replace Term:
+          <input id="replace-term-input" class="l3" size="15" type="text" onchange="manipulateText()">
+        </label>
+        <div id="case-sensitivity" class="l2">
+          <div class="l1">
+            <input id="sensitive" class="l1" checked="checked" name="text-manipulation-sensitivity" type="radio" onchange="manipulateText()">
+            <label for="sensitive" class="l1">Case-sensitive</label>
+          </div>
+          <div class="l1">
+            <input id="insensitive" class="l1" name="text-manipulation-sensitivity" type="radio" onchange="manipulateText()">
+            <label for="insensitive" class="l1">Case-insensitive</label>
+          </div>
+        </div>
+        <textarea id="manipulation-input" placeholder="Input your text here…" spellcheck="true" lang="en" aria-label="Input"></textarea>
+        <textarea id="manipulation-output" class="l1" readonly="true" aria-label="Output">Your output will appear here…</textarea>
+        <div id="copy-container">
+          <button id="copy" type="button" data-tooltip="Copied" aria-label="Copy the output to the clipboard.">
+            <svg width="23" viewBox="0 0 20 32">
+              <path d="M15.2 32q-.05 0-.1-.04-.03-.04-.03-.1v-.05l.03-.06.51-1.22-1.27-3.01-.03-.11q0-.06.04-.1.04-.04.1-.04h.32q.08 0 .11.03.04.03.05.08l1.02 2.43 1.04-2.43.05-.08q.04-.03.11-.03h.32q.06 0 .1.04.04.04.04.09l-.04.12-1.89 4.37-.06.08q-.03.03-.1.03zm-4.29 0q-.06 0-.11-.05-.04-.04-.04-.1v-4.43q0-.07.04-.1.05-.05.11-.05h.31q.07 0 .1.04.05.04.05.11v.3q.16-.23.43-.37.27-.15.67-.15.37 0 .63.13.27.12.43.34.18.22.26.5.09.28.1.6l.01.23v.23q-.02.31-.1.6-.1.28-.27.5-.16.21-.43.34-.26.13-.63.13-.39 0-.66-.14-.26-.15-.42-.36v1.55q0 .06-.04.1-.04.05-.11.05zm1.42-1.74q.34 0 .54-.15t.28-.39q.09-.25.1-.53v-.38q-.01-.28-.1-.52-.08-.25-.28-.4-.2-.15-.54-.15-.33 0-.54.15-.2.16-.3.4-.09.23-.1.48l-.01.25v.26q.01.23.11.46.11.23.32.37.2.15.52.15zm-3.98.54q-.51 0-.85-.2-.34-.19-.52-.53t-.2-.78v-.58q.02-.44.2-.78.19-.34.53-.54.34-.19.84-.19.5 0 .84.2.34.19.52.53t.2.78v.58q-.02.44-.2.78-.18.34-.52.54-.34.19-.84.19zm0-.51q.4 0 .66-.26.24-.27.26-.78v-.5q-.02-.51-.26-.77-.25-.27-.66-.27-.42 0-.67.27-.25.26-.26.77v.5q.01.51.26.78.25.26.67.26zm-4.1.51q-.61 0-1.02-.23-.4-.22-.6-.63-.21-.4-.23-.95v-1.18q.02-.54.23-.95.2-.4.6-.63.4-.23 1.02-.23.46 0 .8.13.36.12.58.34.24.21.36.48.12.26.13.54 0 .06-.04.1-.04.04-.1.04H5.6q-.06 0-.1-.04-.04-.03-.06-.12-.12-.52-.43-.71-.3-.2-.77-.2-.54 0-.85.31-.31.3-.33.97-.02.55 0 1.12.02.67.33.97.31.3.85.3.46 0 .77-.19.31-.2.43-.71.02-.09.06-.12.04-.04.1-.04h.37q.06 0 .1.04.05.04.04.1-.01.28-.13.54-.12.27-.36.48-.22.22-.57.34-.35.13-.8.13zM20 2v22H0V2h3C4.23 2 5.18.92 6 0h8c.82.92 1.77 2 3 2zM9 3a1 1 0 102 0 1 1 0 00-2 0zm9 1h-4l-2 2H8.1L6 4H2v18h16zM5 13.73l.86-.8c1 .5 1.63.86 2.75 1.66a23.87 23.87 0 016.11-5.23L15 10c-2.14 1.87-3.7 3.95-5.97 8A42.8 42.8 0 005 13.73z"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+      <script src="/text-manipulation/text-manipulation.min.js"></script>
     </article>
     <article id="prepare-web-images" class="stripe pad">
       <h2 class="l1">Prepare Web Images</h2>
