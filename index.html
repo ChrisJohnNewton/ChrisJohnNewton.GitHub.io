@@ -73,6 +73,7 @@
       <ul class="l1">
         <li class="backing-box"><a class="l2" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('calculators').getBoundingClientRect().top,behavior:'smooth'})">WEIGHT LOSS CALCULATORS</a></li>
         <li class="backing-box"><a class="l2" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('text-manipulation').getBoundingClientRect().top,behavior:'smooth'})">TEXT MANIPULATION</a></li>
+        <li class="backing-box"><a class="l2" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('colour-model-converter').getBoundingClientRect().top,behavior:'smooth'})">COLOUR MODEL CONVERTER</a></li>
         <li class="backing-box"><a class="l2" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('prepare-web-images').getBoundingClientRect().top,behavior:'smooth'})">PREPARE WEB IMAGES</a></li>
       </ul>
     </nav>
@@ -144,6 +145,7 @@
           Select which text manipulation you'd like to use, and then input your text below.
           <select id="manipulation-select" class="l1" style="margin-top:20px" name="manipulation-choice">
             <option value="Search & Replace" selected>Search & Replace</option>
+            <option value="Add Line Numbers">Add Line Numbers</option>
             <option value="To Lowercase">To Lowercase</option>
             <option value="To Uppercase">To Uppercase</option>
             <option value="To Upper First Case">To Upper First Case</option>
@@ -179,6 +181,20 @@
         </div>
       </form>
       <script src="/text-manipulation/text-manipulation.min.js"></script>
+    </article>
+    <article id="colour-model-converter" class="stripe pad">
+      <a class="code-link" href="https://github.com/ChrisJohnNewton/text-manipulation/blob/main/text-manipulation.js" target="_blank" rel="external noreferrer">
+        View the JavaScript
+        <svg width="13" viewBox="0 0 24 24">
+          <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
+        </svg>
+      </a>
+      <h2 class="l1">Colour Model Converter</h2>
+      <form id="colour-model-conversion" class="l1" onsubmit="return false">
+        
+        
+      </form>
+      <script src=""></script>
     </article>
     <article id="prepare-web-images" class="stripe pad">
       <h2 class="l1">Prepare Web Images</h2>

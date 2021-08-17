@@ -358,7 +358,7 @@ select.l1 {
     width: fit-content;
     width: -moz-fit-content;
     justify-self: flex-end;
-    transform: translate(-8px, -61px);
+    transform: translate(-15px, -62px);
 }
 [data-tooltip]::before {            
     opacity: 0;
