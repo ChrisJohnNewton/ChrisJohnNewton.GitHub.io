@@ -293,7 +293,8 @@ label.l1:before {
     height: 11px;
     margin-right: 11px;
 }
-input.l1:checked + label.l1:before {
+input.l1:checked + label.l1:before,
+input.s1:checked + label.l1:before {
     background-color: var(--mainColour);
 }
 label.l2 {
