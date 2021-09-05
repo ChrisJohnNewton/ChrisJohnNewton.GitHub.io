@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Chris Newton's GitHub</title>
   <meta name="description" content="Showcasing Chris Newton's GitHub projects and tools.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -69,7 +69,7 @@
       </div>
     </header>
     <nav class="bb pad h100 f fdc aic stripe">
-      <h2 class="wfc l1">Tools</h2>
+      <h2 class="wfc l1" style="margin-top:10px">Tools</h2>
       <ul class="g p0 l1">
         <li class="z1 bb f aic jcc c2 b1 f16 tac l1 back">
           <a class="w100 hi f aic jcc" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('colour-info-tool').getBoundingClientRect().top,behavior:'smooth'})">COLOUR INFO TOOL</a>
@@ -85,14 +85,14 @@
         </li>
       </ul>
     </nav>
-    <article id="colour-info-tool" class="bb pad h100 f fdc aic stripe">
-      <a id="colour-code-link" class="f wfc c2 f14 code-link" href="https://github.com/ChrisJohnNewton/colour-info-tool/blob/main/colour-info-tool.js" target="_blank" rel="external noreferrer">
+    <article id="colour-info-tool" class="prel bb pad h100 f fdc aic stripe">
+      <a id="colour-code-link" class="pabs f wfc c2 f14 code-link" href="https://github.com/ChrisJohnNewton/colour-info-tool/blob/main/colour-info-tool.js" target="_blank" rel="external noreferrer">
         View the JavaScript
         <svg width="13" viewBox="0 0 24 24">
           <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
         </svg>
       </a>
-      <h2 id="colour-header" class="wfc cb l1">Colour Info Tool</h2>
+      <h2 id="colour-header" class="wfc cb l1 l2">Colour Info Tool</h2>
       <form id="colour-info" onsubmit="return false">
         <fieldset class="f fdc jcse p0 m0 bs0 l1">
           <legend id="colour-legend" class="w310 p0">Choose a colour or type it below as a HTML colour name, hexadecimal, or RGB value to be given more info about it.</legend>
@@ -114,25 +114,30 @@
       </form>
       <script src="/colour-info-tool/colour-info-tool.min.js"></script>
     </article>
-    <article id="text-manipulation" class="bb pad h100 f fdc aic stripe">
-      <a class="f wfc c2 f14 code-link" href="https://github.com/ChrisJohnNewton/text-manipulation/blob/main/text-manipulation.js" target="_blank" rel="external noreferrer">
+    <article id="text-manipulation" class="prel bb pad h100 f fdc aic stripe">
+      <a class="pabs f wfc c2 f14 code-link" href="https://github.com/ChrisJohnNewton/text-manipulation/blob/main/text-manipulation.js" target="_blank" rel="external noreferrer">
         View the JavaScript
         <svg width="13" viewBox="0 0 24 24">
           <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
         </svg>
       </a>
-      <h2 class="wfc l1">Text Manipulation</h2>
+      <h2 class="wfc l1 l2">Text Manipulation</h2>
       <form id="manipulation" class="prel g jcsb l1" onsubmit="return false">
         <label class="w310 f17">
           Select which text manipulation you'd like to use, and then input your text below.
-          <select id="manipulation-select" class="w310 b1 os0 bs2 f15 l1 l2" name="manipulation-choice">
-            <option value="Search & Replace" selected>Search & Replace</option>
-            <option value="Add Line Numbers">Add Line Numbers</option>
-            <option value="To Lowercase">To Lowercase</option>
-            <option value="To Uppercase">To Uppercase</option>
-            <option value="To Upper First Case">To Upper First Case</option>
-            <option value="To Title Case">To Title Case</option>
-          </select>
+          <div class="prel f">
+            <select id="manipulation-select" class="w310 b1 os0 bs2 f15 cp l1 l2" style="padding-left:90px" name="manipulation-choice">
+              <option value="Search & Replace" selected>Search & Replace</option>
+              <option value="Add Line Numbers">Add Line Numbers</option>
+              <option value="To Lowercase">To Lowercase</option>
+              <option value="To Uppercase">To Uppercase</option>
+              <option value="To Upper First Case">To Upper First Case</option>
+              <option value="To Title Case">To Title Case</option>
+            </select>
+            <svg width="23" viewBox="0 0 24 24" class="pabs" style="top:26px;right:6px">
+              <path d="M18.5 7.6L13 6.5V3c0-1.7-1.3-3-3-3S7 1.3 7 3v7.4a5 5 0 00-1.8-.7c-1.9-.3-3.2 1-3.2 2.5 0 .8.4 1.6 1 2.3 4 4 5.7 5 6 9.5h10v-1.7c0-5.2 3-6 3-10 0-2.5-1-4.2-3.5-4.7zm.4 8A11 11 0 0017 22h-6.1c-.8-3.8-3.8-6.3-6.5-9-.7-.6-.4-1.3.5-1.3 1.2 0 3 1.9 4.1 3.2v-12c0-.5.5-.9 1-.9s1 .4 1 1v6.9a.6.6 0 001.1 0v-.6a.8.8 0 011.7 0v1.3a.6.6 0 001.2 0v-.8a.8.8 0 011.7 0v1.5a.6.6 0 001.1 0v-1c0-.4.6-.8 1-.6.7.4 1.2 1 1.2 2.5 0 1.4-.5 2.2-1.1 3.4z"/>
+            </svg>
+          </div>
         </label>
         <label id="search-term-label" class="g aic f17 l2">
           Search Term: 
@@ -145,11 +150,11 @@
         <div id="case-sensitivity" class="wi f jcsb">
           <div class="wfc">
             <input id="sensitive" class="pabs bw os0 bsb bs1 s1" checked="checked" name="text-manipulation-sensitivity" type="radio" onchange="manipulateText()">
-            <label for="sensitive" class="f f17 l1">Case-sensitive</label>
+            <label for="sensitive" class="f aic f17 l1">Case-sensitive</label>
           </div>
           <div class="wfc">
             <input id="insensitive" class="pabs bw os0 bsb bs1 s1" name="text-manipulation-sensitivity" type="radio" onchange="manipulateText()">
-            <label for="insensitive" class="f f17 l1">Case-insensitive</label>
+            <label for="insensitive" class="f aic f17 l1">Case-insensitive</label>
           </div>
         </div>
         <textarea id="manipulation-input" class="bb cb bw os0 bsb bs1 f14 l1" placeholder="Input your text here…" spellcheck="true" lang="en" aria-label="Input"></textarea>
@@ -164,27 +169,32 @@
       </form>
       <script src="/text-manipulation/text-manipulation.min.js"></script>
     </article>
-    <article id="calculators" class="bb pad h100 f fdc aic stripe">
-      <a class="f wfc c2 f14 code-link" href="https://github.com/ChrisJohnNewton/weight-loss-calculators/blob/main/weight-loss-calculators.js" target="_blank" rel="external noreferrer">
+    <article id="calculators" class="prel bb pad h100 f fdc aic stripe">
+      <a class="pabs f wfc c2 f14 code-link" href="https://github.com/ChrisJohnNewton/weight-loss-calculators/blob/main/weight-loss-calculators.js" target="_blank" rel="external noreferrer">
         View the JavaScript
         <svg width="13" viewBox="0 0 24 24">
           <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
         </svg>
       </a>
-      <h2 class="wfc l1">Weight Loss Calculators</h2>
+      <h2 class="wfc l1 l2">Weight Loss Calculators</h2>
       <form id="calculator" class="g jcsb l1" onsubmit="return calculateWeight()">
-        <select id="calculator-select" class="w310 b1 os0 bs2 f15 l1" name="calculator-choice" onchange="prepareCalculator()">
-          <option value="BMI Calculator" selected>Body Mass Index Calculator</option>
-          <option value="BAI Calculator">Body Adiposity Index Calculator</option>
-        </select>
+        <div class="prel f">
+          <select id="calculator-select" class="w310 b1 os0 bs2 f15 cp l1" style="padding-left:57px" name="calculator-choice" onchange="prepareCalculator()">
+            <option value="BMI Calculator" selected>Body Mass Index Calculator</option>
+            <option value="BAI Calculator">Body Adiposity Index Calculator</option>
+          </select>
+          <svg width="23" viewBox="0 0 24 24" class="pabs" style="top:6px;right:6px">
+            <path d="M18.5 7.6L13 6.5V3c0-1.7-1.3-3-3-3S7 1.3 7 3v7.4a5 5 0 00-1.8-.7c-1.9-.3-3.2 1-3.2 2.5 0 .8.4 1.6 1 2.3 4 4 5.7 5 6 9.5h10v-1.7c0-5.2 3-6 3-10 0-2.5-1-4.2-3.5-4.7zm.4 8A11 11 0 0017 22h-6.1c-.8-3.8-3.8-6.3-6.5-9-.7-.6-.4-1.3.5-1.3 1.2 0 3 1.9 4.1 3.2v-12c0-.5.5-.9 1-.9s1 .4 1 1v6.9a.6.6 0 001.1 0v-.6a.8.8 0 011.7 0v1.3a.6.6 0 001.2 0v-.8a.8.8 0 011.7 0v1.5a.6.6 0 001.1 0v-1c0-.4.6-.8 1-.6.7.4 1.2 1 1.2 2.5 0 1.4-.5 2.2-1.1 3.4z"/>
+          </svg>
+        </div>
           <div class="wi f jcsb">
             <div class="wfc">
                 <input id="calculator-imperial" class="pabs bw os0 bsb bs1 s1" checked="checked" name="calculator-measure" type="radio" onchange="prepareCalculator()">
-                <label for="calculator-imperial" class="f f17 l1">Imperial</label>
+                <label for="calculator-imperial" class="f aic f17 l1">Imperial</label>
             </div>
             <div class="wfc">
                 <input id="calculator-metric" class="pabs bw os0 bsb bs1 s1" name="calculator-measure" type="radio" onchange="prepareCalculator()">
-                <label for="calculator-metric" class="f f17 l1">Metric</label>
+                <label for="calculator-metric" class="f aic f17 l1">Metric</label>
             </div>
           </div>
           <label class="f17">
@@ -219,8 +229,8 @@
       </form>
       <script src="/weight-loss-calculators/weight-loss-calculators.min.js"></script>
     </article>
-    <article id="prepare-web-images" class="bb pad h100 f fdc aic stripe">
-      <h2 class="wfc l1">Prepare Web Images</h2>
+    <article id="prepare-web-images" class="prel bb pad h100 f fdc aic stripe">
+      <h2 class="wfc l1 l2">Prepare Web Images</h2>
     </article>
   </div>
   <a href="javascript:window.scrollTo({top:0,behavior:'smooth'})">
