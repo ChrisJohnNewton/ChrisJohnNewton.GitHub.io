@@ -35,6 +35,7 @@
   <link rel="icon" href="favicon.svg">
   <link rel="mask-icon" href="mask-icon.svg" color="#e7c076">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script type="module" src="/prepare-images/avif.js"></script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
             <img width="1400" height="1400" class="l1" src="images/chris-john-newton.jpg" title="Chris Newton Cover Photo" alt="A portrait of Chris Newton standing outside smiling at the camera." loading="lazy">
           </picture>
         </figure>
-        <p id="profile-text">
+        <p id="profile-text" class="l25">
           This is a space where I showcase some tools I've developed for clients and myself.
           <br>
           <br>
@@ -81,7 +82,7 @@
           <a class="w100 hi f aic jcc" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('calculators').getBoundingClientRect().top,behavior:'smooth'})">WEIGHT LOSS CALCULATORS</a>
         </li>
         <li class="z1 bb f aic jcc c2 b1 f16 tac l1 back">
-          <a class="w100 hi f aic jcc" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('prepare-web-images').getBoundingClientRect().top,behavior:'smooth'})">PREPARE WEB IMAGES</a>
+          <a class="w100 hi f aic jcc" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('prepare-images').getBoundingClientRect().top,behavior:'smooth'})">PREPARE IMAGES FOR THE WEB</a>
         </li>
       </ul>
     </nav>
@@ -95,7 +96,7 @@
       <h2 id="colour-header" class="wfc cb l1 l2">Colour Info Tool</h2>
       <form id="colour-info" onsubmit="return false">
         <fieldset class="f fdc jcse p0 m0 bs0 l1">
-          <legend id="colour-legend" class="w310 p0">Choose a colour or type it below as a HTML colour name, hexadecimal, or RGB value to be given more info about it.</legend>
+          <legend id="colour-legend" class="w310 p0 l25">Choose a colour or type it below as a HTML colour name, hexadecimal, or RGB value to be given more info about it.</legend>
           <div class="prel f aic">
             <label for="colour-chooser" class="pabs wfc f15 tac cp" style="padding-left:13px;margin-left:2px">Select your colour here…</label>
             <input id="colour-chooser" class="bb w310 p0 b1 bs2 br0 cp l3 s2" type="color">
@@ -104,15 +105,15 @@
             </svg>
           </div>
           <div class="prel f">
-            <input id="colour-input" class="bb w310 bw os0 bsb bs1 br0 f15 l1 l3 l4" size="15" type="text" placeholder="Or type your colour here…" aria-label="Type Your Colour">
+            <input id="colour-input" class="bb w310 bw os0 bsb bs1 br0 f15 l1 l3 l4" size="15" type="text" placeholder="Or type your colour here…" aria-label="Type your colour.">
             <svg width="35" height="35" viewBox="0 0 24 24" class="pabs bb l1" style="box-shadow:inset 2px -2px 2px 0 rgb(0 0 0 / 50%)">
               <path d="M22 7v10H2V7h20zm2-2H0v14h24V5zM6 8H3v2h3V8zm3 0H7v2h2V8zm3 0h-2v2h2V8zm3 0h-2v2h2V8zm3 0h-2v2h2V8zm3 0h-2v2h2V8zm-4 6H7v2h10v-2zm4-3h-4v2h4v-2zM7 11H3v2h4v-2zm3 0H8v2h2v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2z"/>
             </svg>
         </div>
         </fieldset>
-        <output id="colour-output" class="bb w310 f aic jcc cb bw bsb f15 l3" style="height:150px" for="colour-input" aria-label="Output Your Colour">Your colour's info will output here…</output>
+        <output id="colour-output" class="bb w310 f aic jcc cb bw bsb f15 l3" style="height:150px" for="colour-input" aria-label="Output your colour.">Your colour's info will output here…</output>
       </form>
-      <script src="/colour-info-tool/colour-info-tool.min.js"></script>
+      <script src="/colour-info-tool/colour-info-tool.min.js" defer></script>
     </article>
     <article id="text-manipulation" class="prel bb pad h100 f fdc aic stripe">
       <a class="pabs wfc f aic c2 f14 code-link" href="https://github.com/ChrisJohnNewton/text-manipulation/blob/main/text-manipulation.js" target="_blank" rel="external noreferrer">
@@ -123,7 +124,7 @@
       </a>
       <h2 class="wfc l1 l2">Text Manipulation</h2>
       <form id="manipulation" class="prel g jcsb l1 l2" onsubmit="return false">
-        <label class="w310 f17">
+        <label class="w310 f17 l25">
           Select which text manipulation you'd like to use, and then input your text below.
           <div class="prel f" style="margin-top:20px">
             <select id="manipulation-select" class="w310 b1 os0 bs2 br0 f15 cp l1" name="manipulation-choice">
@@ -155,8 +156,8 @@
             <label for="insensitive" class="f aic f17 l1">Case-insensitive</label>
           </div>
         </fieldset>
-        <textarea id="manipulation-input" class="bb cb bw os0 bsb bs1 br0 f14 l1" placeholder="Input your text here…" spellcheck="true" autocapitalize="off" lang="en" aria-label="Input"></textarea>
-        <textarea id="manipulation-output" class="bb cb bw os0 bsb bs1 br0 f14 l1" readonly="true" aria-label="Output">Your output will appear here…</textarea>
+        <textarea id="manipulation-input" class="bb cb bw os0 bsb bs1 br0 f14 l1" placeholder="Input your text here…" spellcheck="true" autocapitalize="off" lang="en" aria-label="Input."></textarea>
+        <textarea id="manipulation-output" class="bb cb bw os0 bsb bs1 br0 f14 l1" readonly="true" aria-label="Output.">Your output will appear here…</textarea>
         <div class="pabs wfc" style="bottom:2px;right:15px">
           <button id="copy" class="p0 bs0 os0" style="background-color:transparent;transition:0.2s" type="button" data-tooltip="Copied" aria-label="Copy the output to the clipboard.">
             <svg width="23" viewBox="0 0 20 32">
@@ -165,7 +166,7 @@
           </button>
         </div>
       </form>
-      <script src="/text-manipulation/text-manipulation.min.js"></script>
+      <script src="/text-manipulation/text-manipulation.min.js" defer></script>
     </article>
     <article id="calculators" class="prel bb pad h100 f fdc aic stripe">
       <a class="pabs wfc f aic c2 f14 code-link" href="https://github.com/ChrisJohnNewton/weight-loss-calculators/blob/main/weight-loss-calculators.js" target="_blank" rel="external noreferrer">
@@ -175,7 +176,7 @@
         </svg>
       </a>
       <h2 class="wfc l1 l2">Weight Loss Calculators</h2>
-      <form id="calculator" class="g jcsb l1 l2" style="grid-template-rows:repeat(3,auto)" onsubmit="return calculateWeight()">
+      <form id="calculator" class="g jcsb l1 l2" style="margin-top:2px;grid-template-rows:repeat(3,auto)" onsubmit="return calculateWeight()">
         <fieldset class="p0 m0 g bs0 l2">
           <div class="prel f">
             <select id="calculator-select" class="w310 b1 os0 bs2 br0 f15 cp l1" name="calculator-choice" onchange="prepareCalculator()">
@@ -234,10 +235,117 @@
           <output id="weight-results" class="bb w310 f aic jcc cb bw bsb f15 l1">Your result is…</output>
         </fieldset>
       </form>
-      <script src="/weight-loss-calculators/weight-loss-calculators.min.js"></script>
+      <script src="/weight-loss-calculators/weight-loss-calculators.min.js" defer></script>
     </article>
-    <article id="prepare-web-images" class="prel bb pad h100 f fdc aic stripe">
-      <h2 class="wfc l1 l2">Prepare Web Images</h2>
+    <article id="prepare-images" class="prel bb pad h100 f fdc aic">
+      <h2 class="wfc l1 l2">Optimize Images For the Web</h2>
+      <label for="file-chooser" form="drag-and-drop" class="w310 l25">Choose an image you'd like to resize, add metadata to, and convert to the latest image formats. The HTML will also be generated for you.</label>     
+      <div id="drop-area" class="w310 br6" style="margin-top:20px;border:2px dashed #000">
+        <form id="drag-and-drop" style="padding:30px 25px 25px">
+          <fieldset class="prel p0 m0 g jcc bs0" style="height:117px;grid-template-columns:1fr">
+            <legend class="pabs p0 l25 tac" style="top:0;left:20px;right:20px">Drag and drop a JPEG or PNG, or choose it below.</legend>
+            <input id="file-chooser" class="prel bw os0 bsb bs1 br6 cp l1 l3 s3" style="align-self:flex-end" type="file" accept=".jpg,.jpeg,.png">
+          </fieldset>
+        </form>
+      </div>
+      <form id="gallery" class="bb w310 g jcc" style="display:none;padding:30px 10px;grid-template-rows:auto;grid-row-gap:25px;justify-items:center">
+        <fieldset class="g br6" style="grid-row-gap:15px;border:2px solid #e7c076">
+          <legend>Add Metadata</legend>
+          <input id="meta-title" class="bb w310 bw os0 bsb bs1 br0 f15 l1 l3 l4" style="margin-top:10px" size="15" type="text" placeholder="Image Title" aria-label="Type your image's title.">
+          <input id="meta-author" class="bb w310 bw os0 bsb bs1 br0 f15 l1 l3 l4" size="15" type="text" placeholder="Author Name" aria-label="Type the author's name for this image.">
+          <input id="meta-copyright" class="bb w310 bw os0 bsb bs1 br0 f15 l1 l3 l4" size="15" type="text" placeholder="Copyright Info" aria-label="Type the copyright information for this image.">
+        </fieldset>
+        <fieldset class="w310 br6" style="border:2px solid #e7c076">
+          <legend>Choose Image Widths</legend>
+          <fieldset class="p0 m0 g jcsb bs0" style="grid-template-columns:repeat(3,auto);grid-row-gap:17px">
+            <div>
+                <input id="200px" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="image-widths" type="checkbox">
+                <label for="200px" class="f aic f17 l1">200px</label>
+            </div>
+            <div>
+                <input id="300px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+                <label for="300px" class="f aic f17 l1">300px</label>
+            </div>
+            <div>
+              <input id="400px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+              <label for="400px" class="f aic f17 l1">400px</label>
+          </div>
+          <div>
+            <input id="500px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="500px" class="f aic f17 l1">500px</label>
+          </div>
+          <div>
+              <input id="600px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+              <label for="600px" class="f aic f17 l1">600px</label>
+          </div>
+          <div>
+            <input id="700px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="700px" class="f aic f17 l1">700px</label>
+          </div>
+          <div>
+            <input id="800px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="800px" class="f aic f17 l1">800px</label>
+          </div>
+          <div>
+            <input id="900px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="900px" class="f aic f17 l1">900px</label>
+          </div>
+          <div>
+            <input id="1000px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="1000px" class="f aic f17 l1">1000px</label>
+          </div>
+          <div>
+            <input id="1250px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="1250px" class="f aic f17 l1">1250px</label>
+          </div>
+          <div>
+            <input id="1500px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="1500px" class="f aic f17 l1">1500px</label>
+          </div>
+          <div>
+            <input id="1750px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="1750px" class="f aic f17 l1">1750px</label>
+          </div>
+          <div>
+            <input id="2000px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="2000px" class="f aic f17 l1">2000px</label>
+          </div>
+          <div>
+            <input id="2500px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="2500px" class="f aic f17 l1">2500px</label>
+          </div>
+          <div>
+            <input id="3000px" class="pabs bw os0 bsb bs1 br0 s1" name="image-widths" type="checkbox">
+            <label for="3000px" class="f aic f17 l1">3000px</label>
+          </div>
+          </fieldset>
+        </fieldset>
+        <fieldset class="w310 br6" style="border:2px solid #e7c076">
+          <legend>File Types</legend>
+          <fieldset class="p0 m0 g jcsb bs0" style="grid-template-columns:repeat(4,auto);grid-row-gap:17px">
+            <div>
+                <input id="avif" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="file-types" type="checkbox">
+                <label for="avif" class="f aic f17 l1">AVIF</label>
+            </div>
+            <div>
+                <input id="webp" class="pabs bw os0 bsb bs1 br0 s1" name="file-types" type="checkbox">
+                <label for="webp" class="f aic f17 l1">WebP</label>
+            </div>
+            <div>
+              <input id="jpg" class="pabs bw os0 bsb bs1 br0 s1" name="file-types" type="checkbox">
+              <label for="jpg" class="f aic f17 l1">JPG</label>
+          </div>
+          <div>
+            <input id="png" class="pabs bw os0 bsb bs1 br0 s1" name="file-types" type="checkbox">
+            <label for="png" class="f aic f17 l1">PNG</label>
+          </div>
+          </fieldset>
+        </fieldset>
+        <button id="prepare-image-button" class="z1 prel bb cb b1 os0 f16 l1 back" type="button">Prepare Image</button>
+        <button id="execute" class="z1 prel bb cb b1 os0 f16 l1 back" type="button">Execute</button>
+      </form>
+      <script type="module" src="/prepare-images/prepare-images.min.js"></script>
+      <a id="myDownloadLink" href={downloadUrl}>Click to start downloading!</a>
     </article>
   </div>
   <a href="javascript:window.scrollTo({top:0,behavior:'smooth'})">
