@@ -177,6 +177,9 @@ body::-webkit-scrollbar {
 .br0 {
     border-radius: 0;
 }
+.br6 {
+    border-radius: 6px;
+}
 .f13,
 .f13::placeholder {
     font-size: 13px;
@@ -196,6 +199,9 @@ body::-webkit-scrollbar {
 .f17,
 .f17::placeholder {
     font-size: 17px;
+}
+.l25 {
+    line-height: 25px;
 }
 .tac {
     text-align: center;
@@ -307,7 +313,6 @@ h2.l2 {
 */
 p {
     font-weight: 400;
-    line-height: 25px;
 }
 /*
 ====================================================
@@ -340,7 +345,8 @@ span.l2 {
     right: 0;
     width: 35px;
     height: 35px;
-    box-shadow: inset 0.2em 0.2em 0.2em 0 rgb(173 142 85 / 50%), inset 2px -2px 2px 0 rgb(173 142 85 / 50%);
+    box-shadow: inset 0.2em 0.2em 0.2em 0 rgb(173 142 85 / 50%),
+    inset 2px -2px 2px 0 rgb(173 142 85 / 50%);
     pointer-events: none;
 }
 span.l2::before,
@@ -366,7 +372,7 @@ span.l2::after {
 ====================================================
 */
 fieldset.l1 {
-    height: 200px;
+    height: 225px;
 }
 fieldset.l2 {
     grid-row-gap: 20px;
@@ -479,6 +485,26 @@ input.s2[type="color"]::-moz-color-swatch {
 input.s2[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;
 }
+input.s3 {
+    color: rgba(0,0,0,0);
+    background-color: var(--mainColour);
+    box-shadow: inset 0.2em 0.2em 0.2em 0 rgb(255 255 255 / 50%), inset 2px -2px 2px 0 rgb(173 142 85 / 50%);
+    border: 2px solid var(--tertiaryColour);
+}
+input.s3::file-selector-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin-right: 0;
+    background-color: transparent;
+    border-style: none;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
 /*
 ====================================================
     OUTPUT LAYERS
@@ -530,6 +556,11 @@ img.l1 {
     height: auto;
     border-radius: 50%;
 }
+img.l2 {
+    width: 150px;
+    padding: 6px;
+    background-color: #e7c076;
+}
 /*
 ====================================================
     PICTURE LAYERS
@@ -564,7 +595,6 @@ li.l1 {
     border: 3px solid var(--mainColour);
     letter-spacing: 1px;
 }
-
 @media screen and (min-width: 600px) {
     ul.l1 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
