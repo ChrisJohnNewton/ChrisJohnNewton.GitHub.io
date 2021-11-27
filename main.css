@@ -135,6 +135,9 @@ body::-webkit-scrollbar {
 .jcse {
     justify-content: space-evenly;
 }
+.jic {
+    justify-items: center;
+}
 .c1 {
     color: var(--mainColour);
 }
