@@ -39,6 +39,7 @@
   <script src="/text-manipulation/text-manipulation.min.js" defer></script>
   <script src="/weight-loss-calculators/weight-loss-calculators.min.js" defer></script>
   <script type="module" src="/optimize-images/optimize-images.js"></script>
+  <script type="module" src="zip.min.js"></script>
 </head>
 
 <body>
@@ -269,40 +270,10 @@
         <button id="prepare-image-button" class="z1 prel bb cb b1 os0 f16 l1 back" type="button">Prepare Image</button>
       </form>
 
-      <form name="download" action="downloadZip/demo.zip" method="POST">
-        <ol id="file-list">
-          <li><label><span>URL: </span><input type="url" name="url" required></label></li>
-        </ol>
-        <button name="more" type="button">➕ Add a URL</button>
-        <button type="reset">🧽 Clear the URLs</button>
-        <button type="submit">⤓ Download all that in one ZIP</button>
+      <form name="download" action="downloadZip/demo.zip" method="POST" style="visibility:hidden">
+        <input type="url" name="url" required>
+        <button type="submit" name="zip">Download ZIP</button>
       </form>
-    
-      <template id="url-input">
-        <li>
-          <label><span>URL: </span><input type="url" name="url" required></label>
-          <button type="button" title="remove this link">❌</button>
-        </li>
-      </template>
-      
-      <script async>
-    // the important part: register the ServiceWorker !
-    navigator.serviceWorker.register('worker.js')
-    
-    // this part implements a very simple dynamic form where you can clone and remove the basic input
-    const list = document.getElementById("file-list")
-    const template = document.getElementById("url-input")
-    
-    document.forms.download.more.onclick = () => {
-      list.appendChild(template.content.cloneNode(true))
-    }
-    document.forms.download.onreset = () => {
-      while (list.childElementCount > 1) list.lastElementChild.remove()
-    }
-    list.addEventListener("click", (event) => {
-      if (event.target.title === "remove this link") event.target.parentElement.remove()
-    })
-      </script>
     </article>
   </div>
   <a href="javascript:window.scrollTo({top:0,behavior:'smooth'})">
