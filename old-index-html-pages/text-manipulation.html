@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Text Manipulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://chrisjohnnewton.github.io/">
+    <link rel="preload" href="https://chrisjohnnewton.github.io/fonts/rubik-v14-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://chrisjohnnewton.github.io/fonts/rubik-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://chrisjohnnewton.github.io/main.min.css" as="style">
+    <link rel="stylesheet" type="text/css" href="https://chrisjohnnewton.github.io/main.min.css">
+    <link rel="icon" href="https://chrisjohnnewton.github.io/favicon.svg">
+    <link rel="mask-icon" href="https://chrisjohnnewton.github.io/mask-icon.svg" color="#e7c076">
+    <link rel="apple-touch-icon" href="https://chrisjohnnewton.github.io/apple-touch-icon.png">
+  </head>
+  <body>
+    <article id="text-manipulation" class="bb pad w100 h100 f fdc aic">
+      <a class="f wfc c2 f14 code-link" href="https://github.com/ChrisJohnNewton/text-manipulation/blob/main/text-manipulation.js" target="_blank" rel="external noreferrer">
+        View the JavaScript
+        <svg width="13" viewBox="0 0 24 24">
+          <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
+        </svg>
+      </a>
+      <h2 class="wfc l1">Text Manipulation</h2>
+      <form id="manipulation" class="prel g jcsb l1" onsubmit="return false">
+        <label class="w310 f17">
+          Select which text manipulation you'd like to use, and then input your text below.
+          <select id="manipulation-select" class="w310 b1 os0 bs2 f15 l1 l2" name="manipulation-choice">
+            <option value="Search & Replace" selected>Search & Replace</option>
+            <option value="Add Line Numbers">Add Line Numbers</option>
+            <option value="To Lowercase">To Lowercase</option>
+            <option value="To Uppercase">To Uppercase</option>
+            <option value="To Upper First Case">To Upper First Case</option>
+            <option value="To Title Case">To Title Case</option>
+          </select>
+        </label>
+        <label id="search-term-label" class="g aic f17 l2">
+          Search Term: 
+          <input id="search-term-input" class="bw os0 bsb bs1 l1 l3" size="15" type="text" onchange="manipulateText()">
+        </label>
+        <label id="replace-term-label" class="g aic f17 l2">
+          Replace Term:
+          <input id="replace-term-input" class="bw os0 bsb bs1 l1 l3" size="15" type="text" onchange="manipulateText()">
+        </label>
+        <div id="case-sensitivity" class="wi f jcsb">
+          <div class="wfc">
+            <input id="sensitive" class="pabs bw os0 bsb bs1 s1" checked="checked" name="text-manipulation-sensitivity" type="radio" onchange="manipulateText()">
+            <label for="sensitive" class="f f17 l1">Case-sensitive</label>
+          </div>
+          <div class="wfc">
+            <input id="insensitive" class="pabs bw os0 bsb bs1 s1" name="text-manipulation-sensitivity" type="radio" onchange="manipulateText()">
+            <label for="insensitive" class="f f17 l1">Case-insensitive</label>
+          </div>
+        </div>
+        <textarea id="manipulation-input" class="bb cb bw os0 bsb bs1 f14 l1" placeholder="Input your text here…" spellcheck="true" lang="en" aria-label="Input"></textarea>
+        <textarea id="manipulation-output" class="bb cb bw os0 bsb bs1 f14 l1" readonly="true" aria-label="Output">Your output will appear here…</textarea>
+        <div class="pabs wfc" style="bottom:2px;right:15px">
+          <button id="copy" class="p0 bs0 os0" style="background-color:transparent;transition:0.2s" type="button" data-tooltip="Copied" aria-label="Copy the output to the clipboard.">
+            <svg width="23" viewBox="0 0 20 32">
+              <path d="M15.2 32q-.05 0-.1-.04-.03-.04-.03-.1v-.05l.03-.06.51-1.22-1.27-3.01-.03-.11q0-.06.04-.1.04-.04.1-.04h.32q.08 0 .11.03.04.03.05.08l1.02 2.43 1.04-2.43.05-.08q.04-.03.11-.03h.32q.06 0 .1.04.04.04.04.09l-.04.12-1.89 4.37-.06.08q-.03.03-.1.03zm-4.29 0q-.06 0-.11-.05-.04-.04-.04-.1v-4.43q0-.07.04-.1.05-.05.11-.05h.31q.07 0 .1.04.05.04.05.11v.3q.16-.23.43-.37.27-.15.67-.15.37 0 .63.13.27.12.43.34.18.22.26.5.09.28.1.6l.01.23v.23q-.02.31-.1.6-.1.28-.27.5-.16.21-.43.34-.26.13-.63.13-.39 0-.66-.14-.26-.15-.42-.36v1.55q0 .06-.04.1-.04.05-.11.05zm1.42-1.74q.34 0 .54-.15t.28-.39q.09-.25.1-.53v-.38q-.01-.28-.1-.52-.08-.25-.28-.4-.2-.15-.54-.15-.33 0-.54.15-.2.16-.3.4-.09.23-.1.48l-.01.25v.26q.01.23.11.46.11.23.32.37.2.15.52.15zm-3.98.54q-.51 0-.85-.2-.34-.19-.52-.53t-.2-.78v-.58q.02-.44.2-.78.19-.34.53-.54.34-.19.84-.19.5 0 .84.2.34.19.52.53t.2.78v.58q-.02.44-.2.78-.18.34-.52.54-.34.19-.84.19zm0-.51q.4 0 .66-.26.24-.27.26-.78v-.5q-.02-.51-.26-.77-.25-.27-.66-.27-.42 0-.67.27-.25.26-.26.77v.5q.01.51.26.78.25.26.67.26zm-4.1.51q-.61 0-1.02-.23-.4-.22-.6-.63-.21-.4-.23-.95v-1.18q.02-.54.23-.95.2-.4.6-.63.4-.23 1.02-.23.46 0 .8.13.36.12.58.34.24.21.36.48.12.26.13.54 0 .06-.04.1-.04.04-.1.04H5.6q-.06 0-.1-.04-.04-.03-.06-.12-.12-.52-.43-.71-.3-.2-.77-.2-.54 0-.85.31-.31.3-.33.97-.02.55 0 1.12.02.67.33.97.31.3.85.3.46 0 .77-.19.31-.2.43-.71.02-.09.06-.12.04-.04.1-.04h.37q.06 0 .1.04.05.04.04.1-.01.28-.13.54-.12.27-.36.48-.22.22-.57.34-.35.13-.8.13zM20 2v22H0V2h3C4.23 2 5.18.92 6 0h8c.82.92 1.77 2 3 2zM9 3a1 1 0 102 0 1 1 0 00-2 0zm9 1h-4l-2 2H8.1L6 4H2v18h16zM5 13.73l.86-.8c1 .5 1.63.86 2.75 1.66a23.87 23.87 0 016.11-5.23L15 10c-2.14 1.87-3.7 3.95-5.97 8A42.8 42.8 0 005 13.73z"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+      <script src="text-manipulation.min.js"></script>
+    </article>
+  </body>
+</html> 

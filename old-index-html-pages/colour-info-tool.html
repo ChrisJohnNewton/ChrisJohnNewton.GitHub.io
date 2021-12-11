@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Colour Info Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://chrisjohnnewton.github.io/">
+    <link rel="preload" href="https://chrisjohnnewton.github.io/fonts/rubik-v14-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://chrisjohnnewton.github.io/fonts/rubik-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://chrisjohnnewton.github.io/main.min.css" as="style">
+    <link rel="stylesheet" type="text/css" href="https://chrisjohnnewton.github.io/main.min.css">
+    <link rel="icon" href="https://chrisjohnnewton.github.io/favicon.svg">
+    <link rel="mask-icon" href="https://chrisjohnnewton.github.io/mask-icon.svg" color="#e7c076">
+    <link rel="apple-touch-icon" href="https://chrisjohnnewton.github.io/apple-touch-icon.png">
+  </head>
+  <body>
+    <article id="colour-info-tool" class="bb pad w100 h100 f fdc aic">
+      <a id="colour-code-link" class="f wfc c2 f14 code-link" href="https://github.com/ChrisJohnNewton/colour-info-tool/blob/main/colour-info-tool.js" target="_blank" rel="external noreferrer">
+        View the JavaScript
+        <svg width="13" viewBox="0 0 24 24">
+          <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
+        </svg>
+      </a>
+      <h2 id="colour-header" class="wfc cb l1">Colour Info Tool</h2>
+      <form id="colour-info" onsubmit="return false">
+        <fieldset class="f fdc jcse p0 m0 bs0 l1">
+          <legend id="colour-legend" class="w310 p0">Choose a colour or input it below as a HTML colour name, hexadecimal, or RGB value to be given more info about it.</legend>
+          <div class="prel f">
+            <label for="colour-chooser" class="pabs w100 f15 tac cp" style="align-self:center">Select your colour here…</label>
+            <input id="colour-chooser" class="bb w310 p0 bsb bs1 cp l3 s2" type="color">
+          </div>
+          <input id="colour-input" class="bb w310 bw os0 bsb bs1 f15 l1 l3" size="15" type="text" placeholder="Or input your colour here…" aria-label="Input Your Colour">
+        </fieldset>
+        <output id="colour-output" class="bb w310 f aic jcc cb bw bsb f15 l3" style="height:150px" for="colour-input" aria-label="Output Your Colour">Your colour's info will output here…</output>
+      </form>
+      <script src="colour-info-tool.min.js"></script>
+    </article>
+  </body>
+</html> 
