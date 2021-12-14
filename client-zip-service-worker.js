@@ -24,7 +24,9 @@ self.addEventListener("fetch", (event) => {
 			.then(data => downloadZip(activate(data.getAll('url'))))
 			.catch(err => new Response(err.message, { status: 500 }))
 	  	)
-	}
+	};
+	// self.filename = new String();
+	// self.imageTypes = new Array();
 });
 
 /** generate Responses by iterating over a list of URLs */
@@ -75,28 +77,15 @@ const downloadZip = (() => {
 			A: e.stream()
 		};
 		if (e instanceof Response) {
-			if (self.filename[0] === ".") {
-				const o = e.headers.get("content-disposition"),
-					a = o && o.match(/;\s*filename\*?=["']?(.*?)["']?$/i),
-					f = a && a[1] || `${new URL(e.url).pathname.split("/").pop()}.${imageTypes[imageTypesCount]}`,
-					r = f && decodeURIComponent(f);
+			const o = e.headers.get("content-disposition"),
+				a = o && o.match(/;\s*filename\*?=["']?(.*?)["']?$/i),
+				f = a && a[1] || `${self.filename}.${self.imageTypes[self.imageTypesCount]}`,
+				r = f && decodeURIComponent(f);
 
-				return {
-					i: n || d(r),
-					o: i || new Date(e.headers.get("Last-Modified") || Date.now()),
-					A: e.body
-				}
-			} else {
-				const o = e.headers.get("content-disposition"),
-					a = o && o.match(/;\s*filename\*?=["']?(.*?)["']?$/i),
-					f = a && a[1] || `${self.filename}.${imageTypes[imageTypesCount]}`,
-					r = f && decodeURIComponent(f);
-
-				return {
-					i: n || d(r),
-					o: i || new Date(e.headers.get("Last-Modified") || Date.now()),
-					A: e.body
-				}
+			return {
+				i: n || d(r),
+				o: i || new Date(e.headers.get("Last-Modified") || Date.now()),
+				A: e.body
 			}
 		}
 		if (!n || 0 === n.length) throw new Error("The file must have a name.");

@@ -249,8 +249,7 @@
         </form>
       </div>
       <form id="gallery" class="bb w310 g jcc" style="display:none;padding:30px 10px;grid-template-rows:auto;grid-row-gap:25px;justify-items:center">
-        <input id="image-name" class="w310 bw os0 bsb bs1 br0 l1 l3 l5" size="15" type="text" autocapitalize="off" placeholder="Type the image name…" aria-label="Type the image name.">
-        <fieldset class="w310 f br6" style="border:2px solid var(--mainColour)">
+        <fieldset id="preserve-name-fieldset" class="w310 f fdc br6" style="height:37px;border:2px solid var(--mainColour);transition:.25s">
           <legend>Preserve your image's filename?</legend>
           <div class="w100 f jcse">
             <div>
@@ -262,6 +261,7 @@
               <label for="dont-preserve" class="f aic f17 l1">No</label>
             </div>
           </div>
+          <input id="image-name" class="bb w310 bw os0 br0 l3 l5" style="border-style:none none solid;border-bottom-width:1px;border-bottom-color:#000;transition:.1s;opacity:0;visibility:hidden" size="15" type="text" autocapitalize="off" placeholder="Type the image's new name…" aria-label="Type the image's new name.">
         </fieldset>
         <fieldset class="w310 br6" style="border:2px solid var(--mainColour)">
           <legend>File Types</legend>
