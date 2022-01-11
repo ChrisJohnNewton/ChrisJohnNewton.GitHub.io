@@ -1,4 +1,3 @@
-// self.importScripts('/optimize-images/imports/client-zip/client-zip.js');
 self.imageTypesCount = 0;
 
 self.addEventListener("install", (event) => {
@@ -25,8 +24,6 @@ self.addEventListener("fetch", (event) => {
 			.catch(err => new Response(err.message, { status: 500 }))
 	  	)
 	};
-	// self.filename = new String();
-	// self.imageTypes = new Array();
 });
 
 /** generate Responses by iterating over a list of URLs */
@@ -39,17 +36,13 @@ async function* activate(urls) {
       else if (response.status === 204 || response.headers.get("Content-Length") === "0" || !response.body)
         console.warn(`skipping empty response for ${url}`)
       else {
-        // const newHeaders = new Headers(response.headers);
-        // newHeaders.set("content-disposition", "test");
-        // const newResponse = new Response(response.body, { headers: newHeaders });  
-        // yield newResponse
         yield response;
       }
     } catch (err) {
       console.error(err)
     }
 
-	self.imageTypesCount = imageTypesCount + 1;
+	self.imageTypesCount = self.imageTypesCount + 1;
   }
 }
 

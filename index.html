@@ -239,7 +239,7 @@
     </article>
     <article id="optimize-images" class="prel bb pad h100 f fdc aic">
       <h2 class="wfc l1 l2">Optimize Images For the Web</h2>
-      <label for="file-chooser" form="drag-and-drop" class="w310 l25">Choose an image you'd like to resize, add metadata to, and convert to the latest image formats. The HTML will also be generated for you.</label>     
+      <label for="file-chooser" form="drag-and-drop" class="w310 l25">Choose an image you'd like to convert to the latest image formats all from the front-end!</label>     
       <div id="drop-area" class="w310 br6" style="margin-top:20px;border:2px dashed #000">
         <form id="drag-and-drop" style="padding:30px 25px 25px">
           <fieldset class="prel p0 m0 g jcc bs0" style="height:117px;grid-template-columns:1fr">
@@ -263,8 +263,24 @@
           </div>
           <input id="image-name" class="bb w310 bw os0 br0 l3 l5" style="border-style:none none solid;border-bottom-width:1px;border-bottom-color:#000;transition:.1s;opacity:0;visibility:hidden" size="15" type="text" autocapitalize="off" placeholder="Type the image's new name…" aria-label="Type the image's new name.">
         </fieldset>
+        <fieldset id="preserve-width-fieldset" class="w310 f fdc br6" style="height:37px;border:2px solid var(--mainColour);transition:.25s">
+          <legend>Preserve your image's dimensions?</legend>
+          <div class="w100 f jcse">
+            <div>
+              <input id="preserve-width" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="preserve-width" type="radio">
+              <label for="preserve-width" class="f aic f17 l1">Yes</label>
+            </div>
+            <div>
+              <input id="dont-preserve-width" class="pabs bw os0 bsb bs1 br0 s1" name="preserve-width" type="radio">
+              <label for="dont-preserve-width" class="f aic f17 l1">No</label>
+            </div>
+          </div>
+          <div class="prel" data-tooltip="Cannot exceed your original width!">
+            <input id="image-width" class="bb w310 bw os0 br0 tac l3 l5" style="border-style:none none solid;border-bottom-width:1px;border-bottom-color:#000;transition:.1s;opacity:0;visibility:hidden" size="15" type="number" min="1" max="3000" autocapitalize="off" placeholder="" aria-label="Type the image's new width.">
+          </div>
+        </fieldset>
         <fieldset class="w310 br6" style="border:2px solid var(--mainColour)">
-          <legend>File Types</legend>
+          <legend>File types:</legend>
           <div class="g jcsb" style="grid-template-columns:repeat(4,auto);grid-row-gap:17px">
             <div>
                 <input id="avif" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="file-types" type="checkbox">

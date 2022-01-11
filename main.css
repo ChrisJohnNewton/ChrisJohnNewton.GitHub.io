@@ -135,6 +135,9 @@ body::-webkit-scrollbar {
 .jcse {
     justify-content: space-evenly;
 }
+.jcsa {
+    justify-content: space-around;
+}
 .jic {
     justify-items: center;
 }
@@ -268,11 +271,15 @@ body::-webkit-scrollbar {
 }
 [data-tooltip]::before {
     content: attr(data-tooltip);
-    left: -38px;
-    bottom: 125%;
-    width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 47px;
+    width: fit-content;
+    width: -moz-fit-content;
     height: 25px;
     line-height: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: var(--mainColour);
     border-radius: 5px;
     font-size: 14px;
@@ -280,8 +287,9 @@ body::-webkit-scrollbar {
 }
 [data-tooltip]::after {
     content: "";
-    left: 7px;
-    bottom: 101%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 37px;
     border-width: 5px;
     border-style: solid;
     border-color: var(--mainColour) transparent transparent transparent;
