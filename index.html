@@ -76,6 +76,9 @@
       <h2 class="wfc l1" style="margin-top:10px">Tools</h2>
       <ul class="g p0 l1">
         <li class="z1 bb f aic jcc c2 b1 f16 tac l1 back">
+          <a class="w100 hi f aic jcc" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('optimize-images').getBoundingClientRect().top,behavior:'smooth'})">OPTIMIZE IMAGES FOR THE WEB</a>
+        </li>
+        <li class="z1 bb f aic jcc c2 b1 f16 tac l1 back">
           <a class="w100 hi f aic jcc" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('colour-info-tool').getBoundingClientRect().top,behavior:'smooth'})">COLOUR INFO TOOL</a>
         </li>
         <li class="z1 bb f aic jcc c2 b1 f16 tac l1 back">
@@ -84,11 +87,84 @@
         <li class="z1 bb f aic jcc c2 b1 f16 tac l1 back">
           <a class="w100 hi f aic jcc" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('calculators').getBoundingClientRect().top,behavior:'smooth'})">WEIGHT LOSS CALCULATORS</a>
         </li>
-        <li class="z1 bb f aic jcc c2 b1 f16 tac l1 back">
-          <a class="w100 hi f aic jcc" href="javascript:window.scrollTo({top:window.pageYOffset+document.getElementById('optimize-images').getBoundingClientRect().top,behavior:'smooth'})">OPTIMIZE IMAGES FOR THE WEB</a>
-        </li>
       </ul>
     </nav>
+    <article id="optimize-images" class="prel bb pad h100 f fdc aic stripe">
+      <a class="pabs wfc f aic c2 f14 code-link" href="https://github.com/ChrisJohnNewton/optimize-images/blob/main/optimize-images.ts" target="_blank" rel="external noreferrer">
+        View the TypeScript
+        <svg width="13" height="13" viewBox="0 0 24 24">
+          <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
+        </svg>
+      </a>
+      <h2 class="wfc l1 l2">Optimize Images For the Web</h2>
+      <label for="file-chooser" form="drag-and-drop" class="w310 l25">Choose an image you'd like to convert to the latest image formats all from the front-end!</label>     
+      <div id="drop-area" class="w310 br6" style="margin-top:20px;border:2px dashed #000">
+        <form id="drag-and-drop" style="padding:30px 25px 25px">
+          <fieldset class="prel p0 m0 g jcc bs0" style="height:117px;grid-template-columns:1fr">
+            <legend class="pabs p0 l25 tac" style="top:0;left:20px;right:20px">Drag and drop a JPEG or PNG, or choose it below.</legend>
+            <input id="file-chooser" class="prel bw os0 bsb bs1 br6 cp l1 l3 s3" style="align-self:flex-end" type="file" accept=".jpg,.jpeg,.png">
+          </fieldset>
+        </form>
+      </div>
+      <form id="gallery" class="bb w310 g jcc" style="display:none;padding:30px 10px;grid-template-rows:auto;grid-row-gap:25px;justify-items:center">
+        <div id="progress-bar-container" class="prel w100 mlrauto" style="height:28px;display:none;pointer-events:none">
+          <label for="progress-bar" class="pabs wi hi f aic jcc f17">0% complete</label>
+          <progress id="progress-bar" value="0" max="100" class="wi app0" style="height:28px">0%</progress>
+        </div>
+        <fieldset id="preserve-name-fieldset" class="w310 f fdc br6" style="height:37px;border:2px solid var(--mainColour);transition:.25s">
+          <legend>Preserve your image's filename?</legend>
+          <div class="w100 f jcse">
+            <div>
+              <input id="preserve" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="preserve-name" type="radio">
+              <label for="preserve" class="f aic f17 l1">Yes</label>
+            </div>
+            <div>
+              <input id="dont-preserve" class="pabs bw os0 bsb bs1 br0 s1" name="preserve-name" type="radio">
+              <label for="dont-preserve" class="f aic f17 l1">No</label>
+            </div>
+          </div>
+          <input id="image-name" class="bb w310 bw os0 br0 l3 l5" style="border-style:none none solid;border-bottom-width:1px;border-bottom-color:#000;transition:.1s;opacity:0;visibility:hidden" size="15" type="text" autocapitalize="off" placeholder="Type the image's new name…" aria-label="Type the image's new name.">
+        </fieldset>
+        <fieldset id="preserve-width-fieldset" class="w310 f fdc br6" style="height:37px;border:2px solid var(--mainColour);transition:.25s">
+          <legend>Preserve your image's dimensions?</legend>
+          <div class="w100 f jcse">
+            <div>
+              <input id="preserve-width" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="preserve-width" type="radio">
+              <label for="preserve-width" class="f aic f17 l1">Yes</label>
+            </div>
+            <div>
+              <input id="dont-preserve-width" class="pabs bw os0 bsb bs1 br0 s1" name="preserve-width" type="radio">
+              <label for="dont-preserve-width" class="f aic f17 l1">No</label>
+            </div>
+          </div>
+          <div class="prel" data-tooltip="Cannot exceed your original width!">
+            <input id="image-width" class="bb w310 bw os0 br0 tac l3 l5" style="border-style:none none solid;border-bottom-width:1px;border-bottom-color:#000;transition:.1s;opacity:0;visibility:hidden" size="15" type="number" min="1" max="3000" autocapitalize="off" placeholder="" aria-label="Type the image's new width.">
+          </div>
+        </fieldset>
+        <fieldset class="w310 br6" style="border:2px solid var(--mainColour)">
+          <legend>File types:</legend>
+          <div class="g jcsb" style="grid-template-columns:repeat(4,auto);grid-row-gap:17px">
+            <div>
+                <input id="avif" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="file-types" type="checkbox">
+                <label for="avif" class="f aic f17 l1">AVIF</label>
+            </div>
+            <div>
+                <input id="webp" class="pabs bw os0 bsb bs1 br0 s1" name="file-types" type="checkbox">
+                <label for="webp" class="f aic f17 l1">WebP</label>
+            </div>
+            <div>
+              <input id="mozjpeg" class="pabs bw os0 bsb bs1 br0 s1" name="file-types" type="checkbox">
+              <label for="mozjpeg" class="f aic f17 l1">MozJPEG</label>
+            </div>
+          </div>
+        </fieldset>
+        <button id="prepare-image-button" class="z1 prel bb cb b1 os0 f16 l1 back" type="button">Prepare Image</button>
+      </form>
+
+      <form name="download" action="downloadZip/optimized-images.zip" method="POST" style="visibility:hidden">
+        <button type="submit" name="zip">Download ZIP</button>
+      </form>
+    </article>
     <article id="colour-info-tool" class="prel bb pad h100 f fdc aic stripe">
       <a id="colour-code-link" class="pabs wfc f aic c2 f14 code-link" href="https://github.com/ChrisJohnNewton/colour-info-tool/blob/main/colour-info-tool.js" target="_blank" rel="external noreferrer">
         View the JavaScript
@@ -169,7 +245,7 @@
         </div>
       </form>
     </article>
-    <article id="calculators" class="prel bb pad h100 f fdc aic stripe">
+    <article id="calculators" class="prel bb pad h100 f fdc aic">
       <a class="pabs wfc f aic c2 f14 code-link" href="https://github.com/ChrisJohnNewton/weight-loss-calculators/blob/main/weight-loss-calculators.js" target="_blank" rel="external noreferrer">
         View the JavaScript
         <svg width="13" height="13" viewBox="0 0 24 24">
@@ -235,76 +311,6 @@
           <button id="submit-button" class="z1 prel bb cb b1 os0 f16 l1 back" type="submit">Calculate BMI</button>
           <output id="weight-results" class="bb w310 f aic jcc cb bw bsb f15 l1">Your result is…</output>
         </fieldset>
-      </form>
-    </article>
-    <article id="optimize-images" class="prel bb pad h100 f fdc aic">
-      <h2 class="wfc l1 l2">Optimize Images For the Web</h2>
-      <label for="file-chooser" form="drag-and-drop" class="w310 l25">Choose an image you'd like to convert to the latest image formats all from the front-end!</label>     
-      <div id="drop-area" class="w310 br6" style="margin-top:20px;border:2px dashed #000">
-        <form id="drag-and-drop" style="padding:30px 25px 25px">
-          <fieldset class="prel p0 m0 g jcc bs0" style="height:117px;grid-template-columns:1fr">
-            <legend class="pabs p0 l25 tac" style="top:0;left:20px;right:20px">Drag and drop a JPEG or PNG, or choose it below.</legend>
-            <input id="file-chooser" class="prel bw os0 bsb bs1 br6 cp l1 l3 s3" style="align-self:flex-end" type="file" accept=".jpg,.jpeg,.png">
-          </fieldset>
-        </form>
-      </div>
-      <form id="gallery" class="bb w310 g jcc" style="display:none;padding:30px 10px;grid-template-rows:auto;grid-row-gap:25px;justify-items:center">
-        <div id="progress-bar-container" class="prel w100 mlrauto" style="height:28px;display:none;pointer-events:none">
-          <label for="progress-bar" class="pabs wi hi f aic jcc f17">0% complete</label>
-          <progress id="progress-bar" value="0" max="100" class="wi app0" style="height:28px">0%</progress>
-        </div>
-        <fieldset id="preserve-name-fieldset" class="w310 f fdc br6" style="height:37px;border:2px solid var(--mainColour);transition:.25s">
-          <legend>Preserve your image's filename?</legend>
-          <div class="w100 f jcse">
-            <div>
-              <input id="preserve" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="preserve-name" type="radio">
-              <label for="preserve" class="f aic f17 l1">Yes</label>
-            </div>
-            <div>
-              <input id="dont-preserve" class="pabs bw os0 bsb bs1 br0 s1" name="preserve-name" type="radio">
-              <label for="dont-preserve" class="f aic f17 l1">No</label>
-            </div>
-          </div>
-          <input id="image-name" class="bb w310 bw os0 br0 l3 l5" style="border-style:none none solid;border-bottom-width:1px;border-bottom-color:#000;transition:.1s;opacity:0;visibility:hidden" size="15" type="text" autocapitalize="off" placeholder="Type the image's new name…" aria-label="Type the image's new name.">
-        </fieldset>
-        <fieldset id="preserve-width-fieldset" class="w310 f fdc br6" style="height:37px;border:2px solid var(--mainColour);transition:.25s">
-          <legend>Preserve your image's dimensions?</legend>
-          <div class="w100 f jcse">
-            <div>
-              <input id="preserve-width" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="preserve-width" type="radio">
-              <label for="preserve-width" class="f aic f17 l1">Yes</label>
-            </div>
-            <div>
-              <input id="dont-preserve-width" class="pabs bw os0 bsb bs1 br0 s1" name="preserve-width" type="radio">
-              <label for="dont-preserve-width" class="f aic f17 l1">No</label>
-            </div>
-          </div>
-          <div class="prel" data-tooltip="Cannot exceed your original width!">
-            <input id="image-width" class="bb w310 bw os0 br0 tac l3 l5" style="border-style:none none solid;border-bottom-width:1px;border-bottom-color:#000;transition:.1s;opacity:0;visibility:hidden" size="15" type="number" min="1" max="3000" autocapitalize="off" placeholder="" aria-label="Type the image's new width.">
-          </div>
-        </fieldset>
-        <fieldset class="w310 br6" style="border:2px solid var(--mainColour)">
-          <legend>File types:</legend>
-          <div class="g jcsb" style="grid-template-columns:repeat(4,auto);grid-row-gap:17px">
-            <div>
-                <input id="avif" class="pabs bw os0 bsb bs1 br0 s1" checked="checked" name="file-types" type="checkbox">
-                <label for="avif" class="f aic f17 l1">AVIF</label>
-            </div>
-            <div>
-                <input id="webp" class="pabs bw os0 bsb bs1 br0 s1" name="file-types" type="checkbox">
-                <label for="webp" class="f aic f17 l1">WebP</label>
-            </div>
-            <div>
-              <input id="mozjpeg" class="pabs bw os0 bsb bs1 br0 s1" name="file-types" type="checkbox">
-              <label for="mozjpeg" class="f aic f17 l1">MozJPEG</label>
-            </div>
-          </div>
-        </fieldset>
-        <button id="prepare-image-button" class="z1 prel bb cb b1 os0 f16 l1 back" type="button">Prepare Image</button>
-      </form>
-
-      <form name="download" action="downloadZip/optimized-images.zip" method="POST" style="visibility:hidden">
-        <button type="submit" name="zip">Download ZIP</button>
       </form>
     </article>
   </div>
