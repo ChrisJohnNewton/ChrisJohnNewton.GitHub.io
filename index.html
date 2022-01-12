@@ -249,6 +249,10 @@
         </form>
       </div>
       <form id="gallery" class="bb w310 g jcc" style="display:none;padding:30px 10px;grid-template-rows:auto;grid-row-gap:25px;justify-items:center">
+        <div id="progress-bar-container" class="prel w100 mlrauto" style="height:28px;display:none;pointer-events:none">
+          <label for="progress-bar" class="pabs wi hi f aic jcc f17">0% complete</label>
+          <progress id="progress-bar" value="0" max="100" class="wi app0" style="height:28px">0%</progress>
+        </div>
         <fieldset id="preserve-name-fieldset" class="w310 f fdc br6" style="height:37px;border:2px solid var(--mainColour);transition:.25s">
           <legend>Preserve your image's filename?</legend>
           <div class="w100 f jcse">

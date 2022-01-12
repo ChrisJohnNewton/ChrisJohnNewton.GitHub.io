@@ -108,6 +108,10 @@ body::-webkit-scrollbar {
 .m0 {
     margin: 0;
 }
+.mlrauto {
+    margin-left: auto;
+    margin-right: auto;
+}
 .h100 {
     height: 100%;
 }
@@ -215,6 +219,11 @@ body::-webkit-scrollbar {
 .cp {
     cursor: pointer;
 }
+.app0 {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
 /*
 ====================================================
     SPECIFIC LAYERS
@@ -297,6 +306,32 @@ body::-webkit-scrollbar {
 .tooltipOpaque::before,
 .tooltipOpaque::after {
     opacity: 1;
+}
+/*
+====================================================
+    PROGRESS
+====================================================
+*/
+progress[value]::-webkit-progress-bar {
+    background-color:#eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25) inset;
+}
+progress[value]::-webkit-progress-value {
+    background-image:
+    -webkit-linear-gradient(-45deg, transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%, transparent 66%),
+    -webkit-linear-gradient(top, var(--mainColour), rgba(0,0,0,.25)),
+    -webkit-linear-gradient(left, var(--mainColour), var(--mainColour));
+    border-radius: 2px;
+    background-size: 35px 28px, 100% 100%, 100% 100%;
+}
+progress[value]::-moz-progress-bar{
+    background-image:
+    -webkit-linear-gradient(-45deg, transparent 33%,rgba(0,0,0,.1) 33%,rgba(0,0,0,.1) 66%, transparent 66%),
+    -webkit-linear-gradient(top, var(--mainColour), rgba(0,0,0,.25)),
+    -webkit-linear-gradient(left, var(--mainColour), var(--mainColour));
+    border-radius: 2px;
+    background-size: 35px 28px,100% 100%,100% 100%;
 }
 /*
 ====================================================
