@@ -555,6 +555,20 @@ input.s3::file-selector-button {
     letter-spacing: 1px;
     pointer-events: none;
 }
+input.s3::-webkit-file-upload-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin-right: 0;
+    background-color: transparent;
+    border-style: none;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
 /*
 ====================================================
     OUTPUT LAYERS
