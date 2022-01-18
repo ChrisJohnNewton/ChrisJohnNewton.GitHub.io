@@ -39,8 +39,21 @@
   <script src="/text-manipulation/text-manipulation.min.js" defer></script>
   <script src="/weight-loss-calculators/weight-loss-calculators.min.js" defer></script>
   <script type="module" src="/optimize-images/optimize-images.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-  <script>eruda.init()</script>
+  <script>
+    let { userAgent } = navigator,
+    browserVersion;
+    
+    if (userAgent.includes('Firefox/')) {
+      browserVersion = userAgent.match(/Firefox\/\d+(\.)?\d*/)[0];
+    } else if (userAgent.includes('Edg/')) {
+      browserVersion = userAgent.match(/Edg\/\d+(\.)?\d*/)[0];
+    } else if (userAgent.includes('Chrome/')) {
+      browserVersion = userAgent.match(/Chrome\/\d+(\.)?\d*/)[0];
+    } else if (userAgent.includes('Safari/')) {
+      browserVersion = userAgent.match(/\d+(\.)?\d* Safari/)[0];
+    }
+    alert(`Browser is: ${browserVersion}`)
+  </script>
 </head>
 
 <body>
