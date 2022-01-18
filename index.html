@@ -52,7 +52,7 @@
     } else if (userAgent.includes('Safari/')) {
       browserVersion = userAgent.match(/\d+(\.)?\d* Safari/)[0];
     }
-    alert(`Browser is: ${browserVersion}`)
+    alert(`Browser: ${browserVersion}\nService Worker: ${navigator.serviceWorker.controller.scriptURL}, ${navigator.serviceWorker.controller.state}`);
   </script>
 </head>
 
