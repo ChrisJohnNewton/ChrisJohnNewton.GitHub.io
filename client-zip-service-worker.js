@@ -19,9 +19,11 @@ self.addEventListener("fetch", (event) => {
 	// you should use a meaningful URL for each download, for example /downloadZip/invoices.zip
 	const [,name] = url.pathname.match(/\/downloadZip\/(.+)/i) || [,];
 	if (url.origin === self.origin && name) {
-		event.respondWith(event.request.formData()
-			.then(data => downloadZip(activate(data.getAll('url'))))
-			.catch(err => new Response(err.message, { status: 500 }))
+		event.respondWith(
+			new Response(`help!`)
+			// event.request.formData()
+			// .then(data => downloadZip(activate(data.getAll('url'))))
+			// .catch(err => new Response(err.message, { status: 500 }))
 	  	)
 	};
 });
