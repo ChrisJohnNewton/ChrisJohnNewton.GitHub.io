@@ -52,11 +52,10 @@
     } else if (userAgent.includes('Safari/')) {
       browserVersion = userAgent.match(/\d+(\.)?\d* Safari/)[0];
     }
-    try {
-      alert(`Browser: ${browserVersion}\nService Worker: ${navigator.serviceWorker.controller.scriptURL}, ${navigator.serviceWorker.controller.state}`);
-    } catch (e) {
-      alert(`Browser: ${browserVersion}\n${e}`);
-    }
+    
+    // navigator.serviceWorker.addEventListener("statechange", (event) => {
+    //   alert(`Browser: ${browserVersion}\nService Worker: ${navigator.serviceWorker.controller.scriptURL}, ${navigator.serviceWorker.controller.state}`);
+    // })
   </script>
 </head>
 
@@ -116,6 +115,10 @@
         </svg>
       </a>
       <h2 class="wfc l1 l2">Optimize Images For the Web</h2>
+      <div>
+        Service Worker:
+        <span id="service-worker">n/a</span>
+      </div>
       <label for="file-chooser" form="drag-and-drop" class="w310 l25">Choose an image you'd like to convert to the latest image formats all from the front-end!</label>     
       <div id="drop-area" class="w310 br6" style="margin-top:20px;border:2px dashed #000">
         <form id="drag-and-drop" style="padding:30px 25px 25px">

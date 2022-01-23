@@ -21,10 +21,9 @@ self.addEventListener("fetch", (event) => {
 	if (url.origin === self.origin && name) {
 		event.preventDefault();
 		event.respondWith(
-			new Response(`help!`)
-			// event.request.formData()
-			// .then(data => downloadZip(activate(data.getAll('url'))))
-			// .catch(err => new Response(err.message, { status: 500 }))
+			event.request.formData()
+			.then(data => downloadZip(activate(data.getAll('url'))))
+			.catch(err => new Response(err.message, { status: 500 }))
 	  	)
 	};
 });
