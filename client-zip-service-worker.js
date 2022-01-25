@@ -1,3 +1,5 @@
+console.log("client-zip-service-worker is version 1");
+
 self.imageTypesCount = 0;
 
 self.addEventListener("install", (event) => {
